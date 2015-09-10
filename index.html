@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+<head>
+  <title>Angular</title>
+</head>
+<body>
+  <div ng-controller="mainController" >
+    <h1>{{greeting}}</h1>
+    <button ng-click="excite()" type="button" name="button">clickMe</button>
+  </div>
+
+  <div ng-controller='secondaryController'>
+    <h1>{{paragraph}}</h1>
+      <ul ng-repeat="movie in movies| orderBy:'-title'">
+        <li>{{movie.title}}</li>
+      </ul>
+      <br>
+      <h3>students</h3>
+      <ul ng-repeat="student in students| orderBy:'-reverse'">
+        <li ng-if="student != ' '">{{student}}</li>
+      </ul>
+
+  </div>
+
+  <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js'></script>
+  <script type="text/javascript" src='main.js'>
+
+  </script>
+</body>
+</html>
